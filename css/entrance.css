@@ -40,7 +40,6 @@
 
 .btnBox {
   text-align: center;
-  cursor: pointer;
 }
 
 .buttonTop {
@@ -54,6 +53,8 @@
   overflow: hidden;
   transition: all 250ms ease;
   border: 1px solid red;
+  
+  cursor: pointer;
 }
 
 #buttonText {
@@ -81,7 +82,6 @@
   transform: skew(-45deg) translate(-120%);
   animation-duration: 1s;
 }
-
 
 
 @keyframes moveBox {

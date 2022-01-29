@@ -5,17 +5,20 @@ window.onload = function() {
 
   button.addEventListener("click", function() {
     setInterval(function(){
+      window.location.href = "main.html";
+    }, 1000);
+    setInterval(function(){
       buttonText.style.color = "red";
     }, 500);
     buttonText.style.color = "white";
     buttonBox.style.animationName = "moveBox";
 
-    window
+    
   });  
 }
 
 // Scroll Animation (sa, 스크롤 애니메이션)
-var scrTriggerMargin = 250;
+var scrTriggerMargin = 225;
 var scrElementList = document.querySelectorAll('.scr');
  
 var scrFunc = function() {
