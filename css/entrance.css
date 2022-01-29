@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.EntranceTextBox {
+  margin: 30vh auto;
+}
+
+.Precautions {
+  margin: 10vh auto;
+}
+
+.Precautions p {
+  text-align: center;
+}
+
+.entranceText {
+  text-align: center;
+  font-size: min(3vw, 25px);
+  font-family: "Chosunilbo_myungjo";
+  padding: 20px;
+  word-break: nowrap;
+}
+
+.precautionText1 {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(3vw, 25px);
+  margin-top: 20vh;
+  color: red;
+}
+
+.precautionText {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  padding: 10px;
+}
+
+.btnBox {
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonTop {
+  display: inline-block;
+  text-align: center;
+  width: 20vw;
+  height: 5vw;
+  border-radius: 10px;
+  margin: 30vh auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 250ms ease;
+  border: 1px solid red;
+}
+
+#buttonText {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: red;
+  animation-duration: 700ms;
+}
+
+#buttonBox {
+  background-color: red;
+  width: 150%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  transform: skew(-45deg) translate(-120%);
+  animation-duration: 1s;
+}
+
+
+
+@keyframes moveBox {
+  from {
+    transform: skew(-45deg) translate(-150%);
+    
+  }
+  to {
+    transform: skew(-45deg) translate(100%);
+    
+  }
+}
+
+/* 스크롤 애니메이션*/
+.scr {
+  opacity: 0; /*불투명도: 0*/
+  transition: all .5s ease;
+}
+
+/* 아래에서 위로 페이드 인 */
+.scr-up { 
+  transform: translate(0, 100px);
+}
+
+.scr.show {
+  opacity: 1; /*불투명도: 1*/
+  transform: none;
+}
+
+
