@@ -12,6 +12,7 @@ window.onload = function() {
         return;
       }
       
+      select.style.visibility = "hidden";
 
       var back = card.querySelector(".back");
 
