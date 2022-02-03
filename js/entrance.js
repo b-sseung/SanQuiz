@@ -3,6 +3,12 @@ window.onload = function() {
   var buttonBox = document.getElementById("buttonBox");
   var buttonText = document.getElementById("buttonText");
 
+  var quizPass = new Array(9).fill(false);
+
+  localStorage.setItem("quizPass", JSON.stringify(quizPass));
+  localStorage.setItem("passNum", -1);
+
+  console.log(quizPass);
   button.addEventListener("click", function() {
     setInterval(function(){
       window.location.href = "main.html";
@@ -12,8 +18,6 @@ window.onload = function() {
     }, 500);
     buttonText.style.color = "white";
     buttonBox.style.animationName = "moveBox";
-
-    
   });  
 }
 
@@ -34,7 +38,3 @@ var scrFunc = function() {
 
 window.addEventListener('load', scrFunc);
 window.addEventListener('scroll', scrFunc);
-
-window.onunload = function() {
-  console.log("종료");
-}
