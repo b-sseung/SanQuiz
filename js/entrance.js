@@ -34,3 +34,7 @@ var scrFunc = function() {
 
 window.addEventListener('load', scrFunc);
 window.addEventListener('scroll', scrFunc);
+
+window.onunload = function() {
+  console.log("종료");
+}

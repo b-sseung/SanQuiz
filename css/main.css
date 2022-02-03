@@ -5,16 +5,30 @@
   font-style: normal;
 }
 
+.title_box {
+  margin-top: min(10vw, 10vh);
+
+  text-align: center;
+}
+
+.title_text {
+  font-size: min(3vw, 25px);
+  font-family: "Chosunilbo_myungjo";
+  padding: 20px;
+  word-break: nowrap;
+}
+
 .picture_box {
   display: grid;
   grid-template-columns: repeat(3, min(25vw, 25vh));
-  grid-gap: 10px 10px;
+  grid-gap: 7px 7px;
 
   justify-content: center;
 
   perspective: 300px;
 
   margin-top: 100px;
+  margin-bottom: min(20vw, 20vh);
 }
 
 .picture {
@@ -38,6 +52,7 @@
   transform: rotateY(0deg);
 
   background-size: contain;
+  box-sizing: border-box;
 }
 
 .front {
