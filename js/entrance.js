@@ -1,3 +1,5 @@
+var value = false;
+
 window.onload = function() {
   var button = document.getElementById("toEnter");
   var buttonBox = document.getElementById("buttonBox");
@@ -10,6 +12,7 @@ window.onload = function() {
 
   console.log(quizPass);
   button.addEventListener("click", function() {
+    value = true;
     setInterval(function(){
       window.location.href = "main.html";
     }, 1000);
@@ -38,3 +41,10 @@ var scrFunc = function() {
 
 window.addEventListener('load', scrFunc);
 window.addEventListener('scroll', scrFunc);
+
+window.onunload = function() {
+  if (!value) {
+    localStorage.setItem("quizPass", "");
+    localStorage.setItem("passNum", -1);
+  }
+}

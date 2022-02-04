@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.titleBox {
+  text-align: center;
+}
+
+.title {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(10vw, 10vh);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(5vw, 5vh);
+}
+
+.answerBox {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.answerText {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  margin-right: 10px;
+}
+
+.answer {
+  width: min(50vw, 200px);
+}
+
+.answerButton {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  margin-left: 10px;
+}
+
+/*퀴즈1*/
+.medalBox {
+  display: grid;
+  grid-template-columns: repeat(3, min(20vw, 150px));
+  grid-column-gap: min(5vw, 40px);
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.goldmedal {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+/*퀴즈2*/
+.quiz2Box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 100px 0;
+}
+
+.quiz2_img {
+  height: min(60vw, 700px);
+
+  object-fit: contain;
+}
+
+.quiz2HintBox {
+  display: flex;
+  justify-content: center;
+}
+
+.quiz2hint1 {
+  border: 1px solid black;
+  width: 7vw;
+  height: 3vw;
+}
+
+.quiz2hint2 {
+  width: 7vw;
+  height: 3vw;
+  font-family: "Chosunilbo_myungjo";
+  text-align: center;
+  line-height: 3vw;
+}
+
+/*퀴즈3*/
+.quiz3Box {
+  text-align: center;
+}
+
+.quiz3_img {
+  width: min(50vw,1000px);
+  height: min(50vw, 1000px);
+  object-fit: contain;
+}
+
+.quiz3_ver, .quiz3_hor {
+  border: 1px solid black;
+  margin: 2vw 10vw;
+  padding: 2vw;
+}
+.quiz3VerText, .quiz3HorText {
+  font-family: "Chosunilbo_myungjo";
+  font-weight: bold;
+  font-size: min(2vw, 20px);
+}
+
+.quiz3question {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.quiz3Text {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 15px);
+  margin-right: 5px;
+  line-height: 20px;
+  text-align: left;
+}
+
+/*퀴즈4*/
+.quiz4Box {
+  text-align: center;
+}
+
+.quiz4_image {
+  width: min(40vw, 700px);
+  object-fit: contain;
+  margin: 10vh;
+  animation-name: "change4Image";
+  animation-duration: 1s;
+}
+
+.quiz4Text {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  margin: 5vh 0;
+}
+
+.quiz4DateBox {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.quiz4Date {
+  border: 1px solid black;
+  width: 2vw;
+  height: 2vw;
+  margin: 5px;
+}
+
+.quiz4DateText {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  margin-right: 10px;
+}
+
+/*퀴즈5*/
+.quiz5ImageBox, .quiz5HintBox {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.quiz5image {
+  width: 10vw;
+  height: 10vw;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.quiz5TextBox {
+  text-align: center;
+  margin: 10vh;
+}
+
+.quix5text {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+}
+.quiz5R {
+  color: red;
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+}
+.quiz5G {
+  color: green;
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+}
+.quiz5B {
+  color: blue;
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+}
+
+.quiz5hintC, .quiz5hintM, .quiz5hintW, .quiz5hintY {
+  width: 5vw;
+  height: 5vw;
+  margin: 10px;
+  border: 1px solid black;
+}
+.quiz5hintC {
+  background-color: cyan;
+}
+.quiz5hintM {
+  background-color: magenta;
+}
+.quiz5hintW {
+  background-color: white;
+}
+.quiz5hintY {
+  background-color: yellow;
+}
+
+/*퀴즈6*/
+.quiz6Box, .quiz6TextBox{
+  text-align: center;
+  margin: 10vh;
+}
+
+.quiz6image {
+  width: 60vw;
+}
+
+.quiz6caption {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  color: red;
+}
+
+.quiz6text {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(4vw, 40px);
+  margin: 20vh 0;
+}
+
+/*퀴즈7*/
+.quiz7Box {
+  text-align: center;
+}
+
+.quiz7TextBox {
+  width: 70vw;
+  border: 1px solid black;
+  text-align: center;
+  margin: 10vh auto;
+}
+
+.quiz7text {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 20px);
+  margin: 5vh 0;
+}
+
+.quiz7question {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(3vw, 30px);
+  font-weight: bold;
+  margin: 20vh 0;
+}

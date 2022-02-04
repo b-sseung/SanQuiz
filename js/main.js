@@ -8,7 +8,13 @@ window.onload = function() {
   var value = new Array(9).fill(false);
   
   //퀴즈 푼 것 체크 배열
-  var quizPass = JSON.parse(localStorage.getItem("quizPass"));
+  var quizPass;
+  try {
+    quizPass = JSON.parse(localStorage.getItem("quizPass"));
+  } catch (exception) {
+    alert("잘못된 접근입니다.");
+    window.location.href = "/entrance.html";
+  }
   //마지막으로 푼 문제 번호
   var passNum = localStorage.getItem("passNum");
   

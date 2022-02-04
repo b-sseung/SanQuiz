@@ -1,8 +1,14 @@
 var closeValue = false;
 
 window.onload = function() {
-
-  var quizPass = JSON.parse(localStorage.getItem("quizPass"));
+  
+  var quizPass;
+  try {
+    quizPass = JSON.parse(localStorage.getItem("quizPass"));
+  } catch (exception) {
+    alert("잘못된 접근입니다.");
+    window.location.href = "/entrance.html";
+  }
   var passNum = localStorage.getItem("passNum");
 
   var button = document.querySelector(".answerButton");
