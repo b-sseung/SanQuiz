@@ -1,9 +1,9 @@
 var closeValue = false;
+var cards = document.querySelectorAll(".picture");
+var list = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"];
 
 
 window.onload = function() {
-  var cards = document.querySelectorAll(".picture");
-  var list = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"];
   // var htmlList = ["quiz1.html"]
   var value = new Array(9).fill(false);
   
@@ -20,6 +20,7 @@ window.onload = function() {
   
   console.log(quizPass);
 
+  var time = 500;
   cards.forEach((card) => {
     var select = card.querySelector(".select");
     var back = card.querySelector(".back");
@@ -35,8 +36,8 @@ window.onload = function() {
 
     if (quizPass[num]) {
       console.log(num + ", " + quizPass[num]);
-      back.classList.add("backTurn");
-      front.classList.add("frontTurn");
+      setTimeout(changeFirst, time, back, front);
+      time += 250;
     }
 
     card.addEventListener("click", function() {
@@ -65,15 +66,39 @@ window.onload = function() {
     });
   });
 
-  function check() {
-    for (var i = 0; i < checkvalue.length; i++) {
-      if (!quizPass[i]) {
-        return false;
-      }
+  setTimeout(check, 2500);
+  
+function check() {
+  for (var i = 0; i < quizPass.length; i++) {
+    if (!quizPass[i]) {
+      return false;
     }
-
-    return true;
   }
+
+  var time = 500;
+  for (var i = 0; i < cards.length; i++) {
+    var back = cards[i].querySelector(".backTurn");
+    var front = cards[i].querySelector(".frontTurn");
+
+    setTimeout(changeSecond, time, back, front, i);
+    time += 250;
+  }
+
+  return true;
+}
+}
+
+
+function changeSecond(back, front, num) {
+  back.src = "/images/change_card_0" + (num+1) + ".jpg";
+
+  back.classList.add("backTurn2th");
+  front.classList.add("frontTurn2th");
+}
+
+function changeFirst(back, front) {
+  back.classList.add("backTurn");
+  front.classList.add("frontTurn");
 }
 
 window.onunload = function() {
@@ -82,4 +107,6 @@ window.onunload = function() {
     localStorage.setItem("passNum", -1);
   }
 }
+
+
 

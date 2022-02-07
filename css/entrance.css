@@ -42,7 +42,7 @@
   text-align: center;
 }
 
-.buttonTop {
+.buttonBottom {
   display: inline-block;
   text-align: center;
   width: 20vw;
@@ -111,4 +111,15 @@
   transform: none;
 }
 
+.GuestBookBox {
+  text-align: right;
+}
 
+
+.guestText {
+  font-size: min(2vw, 20px);
+  margin-right: 20px;
+  font-family: "Chosunilbo_myungjo";
+  color: red;
+  cursor: pointer;
+}

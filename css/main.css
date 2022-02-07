@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+
 @font-face {
   font-family: "Chosunilbo_myungjo";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
@@ -98,4 +101,56 @@
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+}
+
+.backTurn2th {
+  transform: rotateY(0deg);
+}
+
+.frontTurn2th {
+  transform: rotateY(-180deg);
+}
+
+.button_box {
+  margin: 10vw 0;
+  text-align: center;
+}
+
+.EventButton {
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(3vw, 20px);
+ 
+  width: 20vw;
+  height: 5vw;
+  line-height:5vw;
+  border:1px skyblue solid;
+  border-radius: 10px;
+  margin:15px auto;
+  background-color:skyblue;
+  text-align:center;
+  cursor: pointer;
+  color:white;
+  transition:all 0.9s, color 0.3;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  background-color: #9896f1;
+  border-radius: 99px;
+  padding: 0.4rem 3.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.15rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+svg {
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }

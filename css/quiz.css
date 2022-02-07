@@ -271,3 +271,41 @@
   font-weight: bold;
   margin: 20vh 0;
 }
+
+/*퀴즈8*/
+.quiz8Box {
+  text-align: center;
+}
+
+.quiz8image {
+  width: min(60vw, 1000px);
+}
+
+/*퀴즈9*/
+.quiz9Box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz9text {
+  margin-right: 20px;
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(3vw, 30px);
+}
+.quiz9image {
+  margin: 50px 10px;
+  width: min(25vw, 200px);
+  object-fit: contain;
+}
+
+.quiz9HintBox {
+  text-align: center;
+}
+
+.quiz9hint {
+  margin: 70px 0;
+  width: min(15vw, 150px);
+  object-fit: contain;
+}

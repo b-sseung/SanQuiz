@@ -5,7 +5,7 @@ window.onload = function() {
   var buttonBox = document.getElementById("buttonBox");
   var buttonText = document.getElementById("buttonText");
 
-  var quizPass = new Array(9).fill(false);
+  var quizPass = new Array(9).fill(true);
 
   localStorage.setItem("quizPass", JSON.stringify(quizPass));
   localStorage.setItem("passNum", -1);
@@ -23,6 +23,8 @@ window.onload = function() {
     buttonBox.style.animationName = "moveBox";
   });  
 }
+
+
 
 // Scroll Animation (sa, 스크롤 애니메이션)
 var scrTriggerMargin = 225;
