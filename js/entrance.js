@@ -13,10 +13,10 @@ window.onload = function() {
   console.log(quizPass);
   button.addEventListener("click", function() {
     value = true;
-    setInterval(function(){
+    setTimeout(function(){
       window.location.href = "main.html";
     }, 1000);
-    setInterval(function(){
+    setTimeout(function(){
       buttonText.style.color = "red";
     }, 500);
     buttonText.style.color = "white";

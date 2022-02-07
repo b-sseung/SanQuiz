@@ -1,9 +1,12 @@
 var closeValue = false;
 var cards = document.querySelectorAll(".picture");
 var list = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"];
-
-
+var button = document.querySelector(".button_box");
+var buttonstyle = document.querySelector(".EventButton");
 window.onload = function() {
+
+  button.style.visibility = "hidden";
+
   // var htmlList = ["quiz1.html"]
   var value = new Array(9).fill(false);
   
@@ -67,26 +70,40 @@ window.onload = function() {
   });
 
   setTimeout(check, 2500);
-  
-function check() {
-  for (var i = 0; i < quizPass.length; i++) {
-    if (!quizPass[i]) {
-      return false;
+
+  function check() {
+    for (var i = 0; i < quizPass.length; i++) {
+      if (!quizPass[i]) {
+        return false;
+      }
     }
+  
+    var time = 500;
+    for (var i = 0; i < cards.length; i++) {
+      var back = cards[i].querySelector(".backTurn");
+      var front = cards[i].querySelector(".frontTurn");
+  
+      setTimeout(changeSecond, time, back, front, i);
+      time += 250;
+    }
+    
+    document.getElementById("text1").innerText = "축하합니다!"
+    document.getElementById("text1").style.color = "red";
+    document.getElementById("text2").innerText = "9개의 사진을 전부 모았습니다."
+    document.getElementById("text3").innerText = "그동안 수고하셨습니다."
+    button.style.visibility = "visible"
+    return true;
   }
 
-  var time = 500;
-  for (var i = 0; i < cards.length; i++) {
-    var back = cards[i].querySelector(".backTurn");
-    var front = cards[i].querySelector(".frontTurn");
+  button.addEventListener("click", function() {
+    buttonstyle.classList.add("changeButton");
 
-    setTimeout(changeSecond, time, back, front, i);
-    time += 250;
-  }
+    setTimeout(function() {
+      window.location.href = "eventpage.html";
+    }, 1000);
+  });
+}
 
-  return true;
-}
-}
 
 
 function changeSecond(back, front, num) {
