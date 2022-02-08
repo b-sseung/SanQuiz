@@ -15,20 +15,10 @@ window.onload = function() {
 
     idText.innerText = "";
   });
-}
 
-window.onunload = function() {
-  
-}
+  var button = document.querySelector(".rankingButton");
 
-window.onpageshow = function(event) {
-  if (event.persisted) {
-    console.log(event.persisted + ", 뒤로 가기");
-  }
-}
-
-window.onpopstate = function(event) {
-  // history.pushState({pageNum:3, searchDt:'2019-05-07'}, null, '/board/list');
-  // location.reload();
-  console.log("?뒤로가기");
+  button.addEventListener("click", function() {
+    window.location.href = "./eventpage.html";
+  });
 }

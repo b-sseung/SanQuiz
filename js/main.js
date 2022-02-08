@@ -12,18 +12,17 @@ window.onload = function() {
   var value = new Array(9).fill(false);
   
   //퀴즈 푼 것 체크 배열
-  var quizPass;
-  try {
-    quizPass = JSON.parse(localStorage.getItem("quizPass"));
-  } catch (exception) {
+  var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
+  if (quizPass == null) {
     alert("잘못된 접근입니다.");
-    window.location.href = "/entrance.html";
+    window.location.href = "./entrance.html";
   }
   //마지막으로 푼 문제 번호
-  var passNum = localStorage.getItem("passNum");
+  var passNum = sessionStorage.getItem("passNum");
   
   console.log(quizPass);
 
+  console.log(sessionStorage.key);
   var time = 500;
   cards.forEach((card) => {
     var select = card.querySelector(".select");
@@ -64,7 +63,7 @@ window.onload = function() {
       
       select.style.visibility = "hidden";
       closeValue = true;
-      localStorage.setItem("passNum", num);
+      sessionStorage.setItem("passNum", num);
       
       window.location.href = "./quizHTML/quiz" + temp + ".html";
     });
@@ -143,25 +142,4 @@ function changeSecond(back, front, num) {
 function changeFirst(back, front) {
   back.classList.add("backTurn");
   front.classList.add("frontTurn");
-}
-
-window.onunload = function() {
-  if (!closeValue) {
-    localStorage.setItem("quizPass", "");
-    localStorage.setItem("passNum", -1);
-  }
-}
-
-
-
-window.onpageshow = function(event) {
-  if (event.persisted) {
-    console.log(event.persisted + ", 뒤로 가기");
-  }
-}
-
-window.onpopstate = function(event) {
-  // history.pushState({pageNum:3, searchDt:'2019-05-07'}, null, '/board/list');
-  // location.reload();
-  console.log("뒤로가기");
 }

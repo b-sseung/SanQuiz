@@ -2,15 +2,14 @@ var closeValue = false;
 var value = true;
 window.onload = function() {
   
-  var quizPass;
-  try {
-    quizPass = JSON.parse(localStorage.getItem("quizPass"));
-  } catch (exception) {
+  var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
+
+  if (quizPass == null) {
     alert("잘못된 접근입니다.");
     window.location.href = "../entrance.html";
   }
 
-  var passNum = localStorage.getItem("passNum");
+  var passNum = sessionStorage.getItem("passNum");
 
   var button = document.querySelector(".answerButton");
   var answer = document.querySelector(".answer");
@@ -29,7 +28,7 @@ window.onload = function() {
     
     if (answer.value == date) {
       quizPass[passNum] = true;
-      localStorage.setItem("quizPass", JSON.stringify(quizPass));
+      sessionStorage.setItem("quizPass", JSON.stringify(quizPass));
       closeValue = true;
       alert("정답입니다.");
       window.location.href = "../main.html";
@@ -54,11 +53,5 @@ window.onload = function() {
       imageBox.src = "../images/quiz4_2.jpg";
       setTimeout(changeImage, 1000);
     }
-  }
-}
-
-window.onunload = function() {
-  if (!closeValue) {
-    localStorage.setItem("passNum", -1);
   }
 }

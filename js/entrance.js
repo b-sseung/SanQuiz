@@ -7,8 +7,8 @@ window.onload = function() {
 
   var quizPass = new Array(9).fill(false);
 
-  localStorage.setItem("quizPass", JSON.stringify(quizPass));
-  localStorage.setItem("passNum", -1);
+  sessionStorage.setItem("quizPass", JSON.stringify(quizPass));
+  sessionStorage.setItem("passNum", -1);
 
   console.log(quizPass);
   button.addEventListener("click", function() {
@@ -29,6 +29,7 @@ window.onload = function() {
   rankButton.addEventListener("click", function() {
     window.location.href = "rankpage.html";
   });
+
 }
 
 
@@ -50,10 +51,3 @@ var scrFunc = function() {
 
 window.addEventListener('load', scrFunc);
 window.addEventListener('scroll', scrFunc);
-
-window.onunload = function() {
-  if (!value) {
-    localStorage.setItem("quizPass", "");
-    localStorage.setItem("passNum", -1);
-  }
-}
