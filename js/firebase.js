@@ -46,12 +46,12 @@ function updateRank(text) {
   });
 }
 
-function readRank() {
-  var docRef = db.collection("Rank").doc("List");
+function readBook() {
+  var docRef = db.collection("GuestBook").doc("test");
 
   docRef.get().then((doc) => {
       if (doc.exists) {
-        return doc.get("name");
+        return doc;
       } else {
           console.log("No such document!");
       }
@@ -60,4 +60,20 @@ function readRank() {
   });
 }
 
-export {updateRank, readRank};
+function addBook(num, text) {
+  var ref = db.collection("GuestBook").doc(num.toString());
+
+  // Set the "capital" field of the city 'DC'
+  return ref.update({
+      letter: text
+  })
+  .then(() => {
+      console.log("Document successfully updated!");
+  })
+  .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+  });
+  
+}
+export {updateRank, readBook, addBook};
