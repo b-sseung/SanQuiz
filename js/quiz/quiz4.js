@@ -7,7 +7,7 @@ window.onload = function() {
     quizPass = JSON.parse(localStorage.getItem("quizPass"));
   } catch (exception) {
     alert("잘못된 접근입니다.");
-    window.location.href = "/entrance.html";
+    window.location.href = "../entrance.html";
   }
 
   var passNum = localStorage.getItem("passNum");
@@ -32,7 +32,7 @@ window.onload = function() {
       localStorage.setItem("quizPass", JSON.stringify(quizPass));
       closeValue = true;
       alert("정답입니다.");
-      window.location.href = "/main.html";
+      window.location.href = "../main.html";
     } else {
       alert("정답이 아닙니다.");
       answer.value = "";
@@ -41,17 +41,17 @@ window.onload = function() {
 
   if (passNum == -1) {
     alert("잘못된 접근입니다.");
-    window.location.href = "/entrance.html";
+    window.location.href = "../entrance.html";
   }
 
   function changeImage() {
     if (value) {
       value = false;
-      imageBox.src = "/images/quiz4_1.jpg";
+      imageBox.src = "../images/quiz4_1.jpg";
       setTimeout(changeImage, 1000);
     } else {
       value = true;
-      imageBox.src = "/images/quiz4_2.jpg";
+      imageBox.src = "../images/quiz4_2.jpg";
       setTimeout(changeImage, 1000);
     }
   }
