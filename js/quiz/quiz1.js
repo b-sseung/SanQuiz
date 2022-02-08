@@ -27,8 +27,9 @@ window.onload = function() {
       window.location.href = "../main.html";
     } else {
       alert("정답이 아닙니다.");
-      answer.value = "";
     }
+
+    answer.value = "";
   });
 
   if (passNum == -1) {

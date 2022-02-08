@@ -1,6 +1,13 @@
-import {updateRank, readRank} from "./firebase.js"
+import {updateRank, readBook} from "./firebase.js"
 
 window.onload = function() {
+  var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
+
+  if (!checkPass) {
+    alert("잘못된 접근입니다.");
+    window.location.href = "./entrance.html";
+  }
+
   var twitterId = document.querySelector(".inputButton");
   var idText = document.getElementById("twitterId");
 
@@ -21,4 +28,14 @@ window.onload = function() {
   button.addEventListener("click", function() {
     window.location.href = "./eventpage.html";
   });
+
+  function checkPass() {
+    for (var i = 0; i < quizPass.length; i++) {
+      if (!quizPass[i]) {
+        return false;
+      }
+
+      return true;
+    }
+  }
 }
