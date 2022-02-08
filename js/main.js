@@ -66,7 +66,7 @@ window.onload = function() {
       closeValue = true;
       localStorage.setItem("passNum", num);
       
-      window.location.href = "/quizHTML/quiz" + temp + ".html";
+      window.location.href = "./quizHTML/quiz" + temp + ".html";
     });
   });
 
