@@ -5,7 +5,7 @@ window.onload = function() {
   var buttonBox = document.getElementById("buttonBox");
   var buttonText = document.getElementById("buttonText");
 
-  var quizPass = new Array(9).fill(true);
+  var quizPass = new Array(9).fill(false);
 
   localStorage.setItem("quizPass", JSON.stringify(quizPass));
   localStorage.setItem("passNum", -1);
@@ -21,7 +21,14 @@ window.onload = function() {
     }, 500);
     buttonText.style.color = "white";
     buttonBox.style.animationName = "moveBox";
-  });  
+  });
+
+  var guestButton = document.getElementById("guestText");
+  var rankButton = document.getElementById("rankText");
+
+  rankButton.addEventListener("click", function() {
+    window.location.href = "rankpage.html";
+  });
 }
 
 

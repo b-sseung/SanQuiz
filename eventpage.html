@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>김안산 퀴즈</title>
   <link rel="shortcut icon" type="image/x-icon" href="/images/title_icon.png">
+  <link rel="stylesheet" href="/css/eventpage.css">
+  <script type="module" src="/js/eventpage.js"></script>
   <script type="module" src="/js/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -13,13 +15,19 @@
 <body>
   <div class="EventBox">
     <div class="EventTextBox">
-      <p class="eventText">트위터 아이디 :</p>
+      <p class="eventText">트위터 아이디</p>
       <input class="eventInput" id="twitterId">
+      <button class="inputButton">등록</button>
     </div>
-    <button class="RankButton">등록</button>
-    <div class="RankingBox">
-
-    </div>
+    <fieldset class="Precautions">
+      <legend class="precautionTitle">주의 사항</legend>
+      <p class="precautionText">- 중복으로 등록은 가능하나 <span class="precautionRed">최종 순위</span>는 처음 등록 시간이 아닌 <span class="precautionRed">마지막 등록 시간</span>으로 되오니 주의 바랍니다.</p>
+      <p class="precautionText">- 이름이 아닌 <span class="precautionRed">아이디</span>를 입력하여 주시길 바랍니다.</p>
+      <p class="precautionText">- 아이디를 잘못 입력한 경우 <span class="precautionRed">정정이 불가능</span>하므로 확인 후 등록해주시길 바랍니다.</p>
+    </fieldset>
+  </div>
+  <div class="RankingEnterBox">
+    <button class="rankingButton">순위 보러가기 -></button>
   </div>
 </body>
 </html>

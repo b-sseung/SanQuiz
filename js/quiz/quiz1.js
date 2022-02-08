@@ -42,3 +42,7 @@ window.onunload = function() {
     localStorage.setItem("passNum", -1);
   }
 }
+
+window.onpopstate = function() { 
+  console.log('뒤로가기 체크');
+};

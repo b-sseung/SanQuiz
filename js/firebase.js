@@ -1,6 +1,4 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
-import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -17,25 +15,35 @@ const firebaseConfig = {
   measurementId: "G-SK1Q1MDCWB"
 };
 
+firebase.initializeApp(firebaseConfig);
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-var db = app.firestore();
+var db = firebase.firestore();
 
 function updateRank(text) {
-  var rank = readRank();
+  // var rank = readRank();
 
-  db.collection("cities").doc("LA").set({
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-})
-.then(() => {
+  if (text.substring(0, 1) != "@") {
+    text = "@" + text;
+  }
+
+  var date = new Date();
+
+  // Add a new document in collection "cities"
+  db.collection("Rank").doc(date.toLocaleString()).set({
+    name: text
+  })
+  .then(() => {
     console.log("Document successfully written!");
-})
-.catch((error) => {
+    alert("등록시간 : \n"+date.toLocaleString() + "\n이벤트에 정상 참여 되었습니다.\n감사합니다.");
+
+  })
+  .catch((error) => {
     console.error("Error writing document: ", error);
-});
+  });
 }
 
 function readRank() {
@@ -51,3 +59,5 @@ function readRank() {
       console.log("Error getting document:", error);
   });
 }
+
+export {updateRank, readRank};

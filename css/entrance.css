@@ -111,7 +111,7 @@
   transform: none;
 }
 
-.GuestBookBox {
+.GuestBookBox, .RankingBox {
   text-align: right;
 }
 
@@ -122,4 +122,13 @@
   font-family: "Chosunilbo_myungjo";
   color: red;
   cursor: pointer;
+}
+
+.rankText {
+  font-size: min(2vw, 20px);
+  margin-right: 20px;
+  font-family: "Chosunilbo_myungjo";
+  color: blue;
+  cursor: pointer;
+  margin-top: 5vh;
 }

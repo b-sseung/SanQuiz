@@ -1,3 +1,4 @@
+
 var closeValue = false;
 var cards = document.querySelectorAll(".picture");
 var list = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9"];
@@ -87,24 +88,50 @@ window.onload = function() {
       time += 250;
     }
     
-    document.getElementById("text1").innerText = "축하합니다!"
-    document.getElementById("text1").style.color = "red";
-    document.getElementById("text2").innerText = "9개의 사진을 전부 모았습니다."
-    document.getElementById("text3").innerText = "그동안 수고하셨습니다."
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var text3 = document.getElementById("text3");
+    var time2 = 0;
+
+    text1.style.color = "red";
+
+    time2 = typingText(text1, "축하합니다!", time2);
+    time2 = typingText(text2, "9개의 사진을 전부 모았습니다.", time2);
+    time2 = typingText(text3, "그동안 수고하셨습니다.", time2);
+
     button.style.visibility = "visible"
     return true;
   }
 
   button.addEventListener("click", function() {
     buttonstyle.classList.add("changeButton");
+    closeValue = true;
 
     setTimeout(function() {
       window.location.href = "eventpage.html";
-    }, 1000);
+    }, 500);
   });
 }
 
+function typingText(textBox, text, time2) {
+  var textArr = text.split("");
+  var timeTemp = time2;
 
+  var textTemp = "";
+  for (var i = 0; i < textArr.length; i++) {
+    textTemp += textArr[i];
+
+    setTimeout(typingFunc, timeTemp, textBox, textTemp);
+
+    timeTemp += 100;
+  }
+
+  return timeTemp;
+}
+
+function typingFunc(textBox, text){
+  textBox.innerText = text;
+}
 
 function changeSecond(back, front, num) {
   back.src = "/images/change_card_0" + (num+1) + ".jpg";
@@ -127,3 +154,14 @@ window.onunload = function() {
 
 
 
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    console.log(event.persisted + ", 뒤로 가기");
+  }
+}
+
+window.onpopstate = function(event) {
+  // history.pushState({pageNum:3, searchDt:'2019-05-07'}, null, '/board/list');
+  // location.reload();
+  console.log("뒤로가기");
+}
