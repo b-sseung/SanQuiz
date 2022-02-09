@@ -46,8 +46,8 @@ function updateRank(text) {
   });
 }
 
-function readBook() {
-  var docRef = db.collection("GuestBook").doc("test");
+function readCheckBook() {
+  var docRef = db.collection("GuestBookCheck").doc("checklist");
 
   docRef.get().then((doc) => {
       if (doc.exists) {
@@ -74,6 +74,24 @@ function addBook(num, text) {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
   });
+}
+
+function checkGuestNum() {
+  var docRef = db.collection("GuestNumber").doc("number");
+
+  docRef.get().then((doc) => {
+      if (doc.exists) {
+        return doc.get("num");
+      } else {
+          console.log("No such document!");
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+}
+
+function getAllBook() {
   
 }
-export {updateRank, readBook, addBook};
+
+export {updateRank, readCheckBook, addBook, checkGuestNum};

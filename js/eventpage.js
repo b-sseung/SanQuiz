@@ -3,7 +3,7 @@ import {updateRank, readBook} from "./firebase.js"
 window.onload = function() {
   var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
 
-  if (!checkPass) {
+  if (quizPass == null || !checkPass) {
     alert("잘못된 접근입니다.");
     window.location.href = "./entrance.html";
   }
@@ -26,7 +26,7 @@ window.onload = function() {
   var button = document.querySelector(".rankingButton");
 
   button.addEventListener("click", function() {
-    window.location.href = "./eventpage.html";
+    window.location.href = "./rankpage.html";
   });
 
   function checkPass() {

@@ -5,7 +5,7 @@ window.onload = function() {
   var buttonBox = document.getElementById("buttonBox");
   var buttonText = document.getElementById("buttonText");
 
-  var quizPass = new Array(9).fill(false);
+  var quizPass = new Array(9).fill(true);
 
   sessionStorage.setItem("quizPass", JSON.stringify(quizPass));
   sessionStorage.setItem("passNum", -1);

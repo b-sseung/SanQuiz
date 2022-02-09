@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Chosunilbo_myungjo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.GuestBookBox {
+  font-family: "Chosunilbo_myungjo";
+
+  margin: 10vh 15vw;
+}
+
+.guestbookTitle{
+  margin-left: min(5vw, 200px);
+  font-size: min(4vw, 4vh);
+}
+
+.guestbookInputBox {
+  margin: 2vw;
+
+  text-align: center;
+}
+
+.guestbookInput {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+
+  overflow-y: hidden;
+  resize: none;
+
+  font-size: min(2vw, 2vh);
+  line-height: min(4vh, 30px);
+}
+
+.enterbuttonBox {
+  text-align: right;
+  padding: 0 3vw;
+  margin: 2vw;
+}
+
+.guestbookEnter {
+  border: none;
+  border-radius: 99999px;
+
+  background-color: skyblue;
+  color: white;
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(2vw, 2vh);
+
+  width: min(10vw, 10vh);
+  height: min(10vw, 10vh);
+}
+
+canvas {
+  z-index: 10;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: scale(1.1);
+}
+
+.precautionText {
+  text-align: center;
+  font-size: min(1vw, 1vh);
+  line-height: 15px;
+}
+
+.precautionTitle {
+  font-size: min(2vw, 2vh);
+  text-align: center;
+  color: red;
+}
+
+.LetterBox {
+  font-family: "Chosunilbo_myungjo";
+}
+
+.letter1 {
+  padding: 5vw 20vw;
+  background-color: #dddddd55;
+
+  font-size: min(2vw, 2vh);
+}
+
+.letter2 {
+  padding: 5vw 20vw;
+  font-size: min(2vw, 2vh);
+}

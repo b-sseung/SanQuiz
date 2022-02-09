@@ -105,10 +105,9 @@ window.onload = function() {
   button.addEventListener("click", function() {
     buttonstyle.classList.add("changeButton");
     closeValue = true;
+    pop();
 
-    setTimeout(function() {
-      window.location.href = "eventpage.html";
-    }, 500);
+
   });
 }
 
@@ -143,3 +142,55 @@ function changeFirst(back, front) {
   back.classList.add("backTurn");
   front.classList.add("frontTurn");
 }
+
+
+//폭죽
+let particles = [];
+const colors = ["red","blue","orange","yellow","green","purple"];
+function pop () {
+  window.scrollTo(0, 0);
+
+  for (let i = 0; i < 150; i++) {
+    const p = document.createElement('particule');
+    p.x = window.innerWidth * 0.5;
+    p.y = window.innerHeight + (Math.random() * window.innerHeight * 0.3);
+    p.vel = {
+      x: (Math.random() - 0.5) * 10,
+      y: Math.random() * -20 - 15
+    };
+    p.mass = Math.random() * 0.2 + 0.8;
+    particles.push(p);
+    p.style.transform = `translate(${p.x}px, ${p.y}px)`;
+    const size1 = Math.random() * 40 + 5;
+    const size2 = Math.random() * 30 + 5;
+    p.style.width = size1 + 'px';
+    p.style.height = size2 + 'px';
+    p.style.background = colors[Math.floor(Math.random()*colors.length)];
+    document.body.appendChild(p);
+  }
+
+  setTimeout(function() {
+    window.location.href = "eventpage.html";
+  }, 4000);
+}
+
+function render () {
+  for (let i = particles.length - 1; i > -1; i--) {
+    const p = particles[i];
+    p.style.transform = `translate3d(${p.x}px, ${p.y}px, 1px)`;
+    
+    p.x += p.vel.x;
+    p.y += p.vel.y;
+    
+    p.vel.y += (0.5 * p.mass);
+    if (p.y > (window.innerHeight * 2)) {
+      p.remove();
+      particles.splice(i, 1);
+    }
+  }
+  requestAnimationFrame(render);
+}
+
+
+// window.addEventListener("click", pop);
+window.setTimeout(render, 700);
