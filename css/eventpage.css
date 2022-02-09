@@ -96,3 +96,13 @@
 
   cursor: pointer;
 }
+
+.mainEntrance {
+  font-size: min(2vw, 20px);
+  margin-right: 20px;
+  font-family: "Chosunilbo_myungjo";
+  color: red;
+  cursor: pointer;
+  text-align: right;
+  cursor: pointer;
+}

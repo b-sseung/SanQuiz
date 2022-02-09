@@ -20,13 +20,18 @@ window.onload = function() {
     
     updateRank(idText.value);
 
-    idText.innerText = "";
+    idText.value = "";
   });
 
   var button = document.querySelector(".rankingButton");
 
   button.addEventListener("click", function() {
     window.location.href = "./rankpage.html";
+  });
+
+  var mainEntrance = document.querySelector(".mainEntrance");
+  mainEntrance.addEventListener("click", function() {
+    window.location.href = "./entrance.html";
   });
 
   function checkPass() {
