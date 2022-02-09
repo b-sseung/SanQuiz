@@ -132,7 +132,7 @@ function typingFunc(textBox, text){
 }
 
 function changeSecond(back, front, num) {
-  back.src = "/images/change_card_0" + (num+1) + ".jpg";
+  back.src = "./images/change_card_0" + (num+1) + ".jpg";
 
   back.classList.add("backTurn2th");
   front.classList.add("frontTurn2th");

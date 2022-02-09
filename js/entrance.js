@@ -26,6 +26,9 @@ window.onload = function() {
   var guestButton = document.getElementById("guestText");
   var rankButton = document.getElementById("rankText");
 
+  guestButton.addEventListener("click", function() {
+    window.location.href = "guestbook.html";
+  });
   rankButton.addEventListener("click", function() {
     window.location.href = "rankpage.html";
   });
