@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+import { createLetter, letterValue } from "./guestbook.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -48,10 +49,24 @@ function updateRank(text) {
 
 function readCheckBook() {
   var docRef = db.collection("GuestBookCheck").doc("checklist");
+  var position = 0;
 
   docRef.get().then((doc) => {
       if (doc.exists) {
-        return doc;
+        var list = doc.data();
+        console.log(list);
+        console.log(doc.data());
+        console.log(doc.data()[3]);
+        console.log(list.length + ", " + list.size);
+        while (true) {
+          if (list[position] != null) {
+            console.log(list[position]);
+            createLetter(letterValue, list[position]);
+            position++;
+          } else {
+            break;
+          }
+        }
       } else {
           console.log("No such document!");
       }
@@ -60,38 +75,45 @@ function readCheckBook() {
   });
 }
 
-function addBook(num, text) {
-  var ref = db.collection("GuestBook").doc(num.toString());
+function addBook(text) {
+  var date = new Date();
 
-  // Set the "capital" field of the city 'DC'
-  return ref.update({
-      letter: text
+  // Add a new document in collection "cities"
+  db.collection("GuestBook").doc(date.toLocaleString()).set({
+    letter: text
   })
   .then(() => {
-      console.log("Document successfully updated!");
+    console.log("Document successfully written!");
   })
   .catch((error) => {
-      // The document probably doesn't exist.
-      console.error("Error updating document: ", error);
+    console.error("Error writing document: ", error);
   });
 }
 
-function checkGuestNum() {
-  var docRef = db.collection("GuestNumber").doc("number");
+// function checkGuestNum() {
+//   var docRef = db.collection("GuestNumber").doc("number");
 
-  docRef.get().then((doc) => {
-      if (doc.exists) {
-        return doc.get("num");
-      } else {
-          console.log("No such document!");
-      }
-  }).catch((error) => {
-      console.log("Error getting document:", error);
-  });
-}
+//   docRef.get().then((doc) => {
+//       if (doc.exists) {
+//         return doc.get("num");
+//       } else {
+//           console.log("No such document!");
+//       }
+//   }).catch((error) => {
+//       console.log("Error getting document:", error);
+//   });
+// }
 
 function getAllBook() {
-  
+  db.collection("GuestBook").get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          createLetter(letterValue, doc.get("letter"));
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
 }
 
-export {updateRank, readCheckBook, addBook, checkGuestNum};
+export {updateRank, readCheckBook, addBook, getAllBook};

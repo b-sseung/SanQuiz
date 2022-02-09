@@ -52,6 +52,8 @@
 
   width: min(10vw, 10vh);
   height: min(10vw, 10vh);
+  
+  cursor: pointer;
 }
 
 canvas {
@@ -81,11 +83,18 @@ canvas {
 .letter1 {
   padding: 5vw 20vw;
   background-color: #dddddd55;
-
+  box-sizing: border-box;
+  width: 100%;
+  white-space: normal;
+  word-break: break-all;
   font-size: min(2vw, 2vh);
 }
 
 .letter2 {
   padding: 5vw 20vw;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: normal;
+  word-break: break-all;
   font-size: min(2vw, 2vh);
 }
