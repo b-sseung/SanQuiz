@@ -1,4 +1,4 @@
-import {updateRank} from "./firebase.js"
+import {updateRank} from "./firebase.js";
 
 window.onload = function() {
   var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
