@@ -29,10 +29,6 @@ window.onload = function() {
     window.location.href = "./rankpage.html";
   });
 
-  var mainEntrance = document.querySelector(".mainEntrance");
-  mainEntrance.addEventListener("click", function() {
-    window.location.href = "./entrance.html";
-  });
 
   function checkPass() {
     for (var i = 0; i < quizPass.length; i++) {

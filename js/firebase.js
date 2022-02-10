@@ -54,13 +54,13 @@ function readCheckBook() {
   docRef.get().then((doc) => {
       if (doc.exists) {
         var list = doc.data();
-        console.log(list);
-        console.log(doc.data());
-        console.log(doc.data()[3]);
-        console.log(list.length + ", " + list.size);
+        // console.log(list);
+        // console.log(doc.data());
+        // console.log(doc.data()[3]);
+        // console.log(list.length + ", " + list.size);
         while (true) {
           if (list[position] != null) {
-            console.log(list[position]);
+            // console.log(list[position]);
             createLetter(letterValue, list[position]);
             position++;
           } else {
