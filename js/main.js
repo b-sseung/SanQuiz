@@ -14,7 +14,7 @@ window.onload = function() {
   //퀴즈 푼 것 체크 배열
   var quizPass = JSON.parse(sessionStorage.getItem("quizPass"));
   if (quizPass == null) {
-    alert("잘못된 접근입니다.");
+    alert(decodeURI("%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%A0%91%EA%B7%BC%EC%9E%85%EB%8B%88%EB%8B%A4.")); //잘못된 접근입니다.
     window.location.href = "./entrance.html";
   }
   //마지막으로 푼 문제 번호
@@ -94,9 +94,9 @@ window.onload = function() {
 
     text1.style.color = "red";
 
-    time2 = typingText(text1, "축하합니다!", time2);
-    time2 = typingText(text2, "9개의 사진을 전부 모았습니다.", time2);
-    time2 = typingText(text3, "그동안 수고하셨습니다.", time2);
+    time2 = typingText(text1, decodeURI("%EC%B6%95%ED%95%98%ED%95%A9%EB%8B%88%EB%8B%A4!"), time2);  //축하합니다!
+    time2 = typingText(text2, decodeURI("9%EA%B0%9C%EC%9D%98%20%EC%82%AC%EC%A7%84%EC%9D%84%20%EC%A0%84%EB%B6%80%20%EB%AA%A8%EC%95%98%EC%8A%B5%EB%8B%88%EB%8B%A4."), time2);  //9개의 사진을 전부 모았습니다.
+    time2 = typingText(text3, decodeURI("%EA%B7%B8%EB%8F%99%EC%95%88%20%EC%88%98%EA%B3%A0%ED%95%98%EC%85%A8%EC%8A%B5%EB%8B%88%EB%8B%A4."), time2);  //그동안 수고하셨습니다.
 
     button.style.visibility = "visible"
     return true;

@@ -188,12 +188,10 @@
 .quiz5TextBox {
   text-align: center;
   margin: 10vh;
-}
-
-.quix5text {
   font-family: "Chosunilbo_myungjo";
   font-size: min(2vw, 20px);
 }
+
 .quiz5R {
   color: red;
   font-family: "Chosunilbo_myungjo";

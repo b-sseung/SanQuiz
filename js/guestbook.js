@@ -19,7 +19,7 @@ window.onload = function() {
 
     enterButton.addEventListener("click", function() {
         if (messageArea.value.length == 0) {
-            alert("등록할 내용이 없습니다.");
+            alert(decodeURI("%EB%93%B1%EB%A1%9D%ED%95%A0%20%EB%82%B4%EC%9A%A9%EC%9D%B4%20%EC%97%86%EC%8A%B5%EB%8B%88%EB%8B%A4."));  //등록할 내용이 없습니다.
         } else {
             addBook(messageArea.value);
             createLetter(letterValue, messageArea.value);
@@ -39,7 +39,7 @@ window.onload = function() {
         if (messageArea.value.length > 200) {
             var str = messageArea.value;
             messageArea.innerText = str.substring(0, 200);
-            alert("200자를 초과하였습니다.");
+            alert(decodeURI("200%EC%9E%90%EB%A5%BC%20%EC%B4%88%EA%B3%BC%ED%95%98%EC%98%80%EC%8A%B5%EB%8B%88%EB%8B%A4.")); //200자를 초과하였습니다.
         }
     }
 }

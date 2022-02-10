@@ -39,8 +39,10 @@ function updateRank(text) {
   })
   .then(() => {
     console.log("Document successfully written!");
-    alert("등록시간 : \n"+date.toLocaleString() + "\n이벤트에 정상 참여 되었습니다.\n감사합니다.");
-
+    alert(decodeURI("%EB%93%B1%EB%A1%9D%EC%8B%9C%EA%B0%84%20:%20") + "\n" + date.toLocaleString() + "\n" + 
+      decodeURI("%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%97%90%20%EC%A0%95%EC%83%81%20%EC%B0%B8%EC%97%AC%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.")
+      + "\n" + decodeURI("%EA%B0%90%EC%82%AC%ED%95%A9%EB%8B%88%EB%8B%A4."));
+    //'등록시간 : '   이벤트에 정상 참여 되었습니다.     감사합니다.
   })
   .catch((error) => {
     console.error("Error writing document: ", error);
