@@ -86,6 +86,11 @@
   border: 1px solid black;
   width: 7vw;
   height: 3vw;
+
+  font-family: "Chosunilbo_myungjo";
+  font-size: min(1vw, 10px);
+  text-align: center;
+  line-height: 3vw;
 }
 
 .quiz2hint2 {
